@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>My Portfolio</title>
+</head>
+
+<body>
+
+    <header class="header">
+        <div>
+            <a href="#home" class="logo">
+                <img src="images/logo.png" alt="Ceylon Biscuits Limited Logo">
+            </a>
+        </div>
+        <nav>
+            <button class="menu-toggle" aria-label="Toggle Navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul id="navigation">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#work">My Work</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="home" id="home">
+        <div class="home-text">
+            <div class="container">
+                <div class="home-text">
+                    <h2>Hi, I'm <span>Hathisa Thissara</span></h2>
+                    <h1>I’m a <span></span></h1>
+                </div>
+               <a href="https://wa.me/+94701207991" class="btn">Hire Me</a> 
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/FB_IMG_1724853380935.jpg" alt="Profile Picture">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About me</h1>
+                    <p>Hey,I'm a passionate web developer with a strong foundation in HTML, CSS, JavaScript, and various
+                        frameworks. I'm dedicated to creating user-friendly and visually appealing websites that meet my
+                        clients' needs. I'm always eager to learn new technologies and keep my skills sharp.</p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                    </div>
+                    <div class="table-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>UI/UX</span><br>Designing Web/App interfaces</li>
+                            <li><span>Web Development</span><br>Web/App Developer</li>
+                            <li><span>App Development</span><br>Building Android & iOS Apps</li>
+                            <li><span>Software Development</span><br>Building Software</li>
+                        </ul>
+                    </div>
+                    <div class="table-contents" id="experience" style="display: none;">
+                        <ul>
+                            <li><span>2024-Current</span><br>Following ICT Diploma</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="service-grid">
+                <div class="service-item">
+                    <h3><i class="fa fa-code"></i> Web Development</i></h3>
+                    <img src="https://img.freepik.com/free-vector/front-end-concept-illustration_114360-22213.jpg?t=st=1731329770~exp=1731333370~hmac=f9eff025ed94ec5c0e56d47284538eafbaa30e6693690c2d261eb9483ac0ed87&w=740"
+                        alt="work 1" class="hover-image">
+                </div>
+                <div class="service-item">
+                    <h3><i class="fa fa-crop"></i> UI/UX</h3>
+                    <img src="https://img.freepik.com/free-vector/linear-flat-ui-ux-landing-page-template_23-2149047070.jpg?t=st=1731329818~exp=1731333418~hmac=e1d53ec6d27adc83cd62caa869276386e0ff6c408660bc567a72635b14d2763a&w=996"
+                        alt="work 2" class="hover-image">
+                </div>
+                <div class="service-item">
+                    <h3><i class="fa fa-crosshairs"></i> Software Development</h3>
+                    <img src="https://img.freepik.com/free-vector/hand-drawn-flat-design-api-illustration_23-2149365021.jpg?ga=GA1.1.1298159162.1725785097&semt=ais_hybrid"
+                        alt="work 3" class="hover-image">
+                </div>
+                <div class="service-item">
+                    <h3><i class="fas fa-mobile-alt"></i> Mobile App Development</h3>
+                    <img src="https://img.freepik.com/free-vector/app-development-banner_33099-1720.jpg?ga=GA1.1.1298159162.1725785097&semt=ais_hybrid"
+                        alt="work 4" class="hover-image">
+                </div>
+
+                <div class="service-item">
+                    <h3><i class="fas fa-laptop-code"></i> Custom Software Development</h3>
+                    <img src="https://img.freepik.com/free-photo/programming-software-code-application-technology-concept_53876-123931.jpg?ga=GA1.1.1298159162.1725785097&semt=ais_hybrid"
+                        alt="work 5" class="hover-image">
+                </div>
+                <div class="service-item">
+                    <h3><i class="fas fa-plug"></i> API Development & Integration</h3>
+                    <img src="https://img.freepik.com/free-vector/gradient-api-infographic_23-2149371582.jpg?ga=GA1.1.1298159162.1725785097&semt=ais_hybrid"
+                        alt="work 6" class="hover-image">
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="work" id="work">
+        <div class="container">
+            <h2>My Work</h2>
+            <div class="work-grid">
+                <div class="work-item">
+                    <h3>Web Page</h3>
+                    <img src="https://img.freepik.com/free-photo/3d-rendering-website-hosting-concept_23-2149484780.jpg?t=st=1731328609~exp=1731332209~hmac=a68dbd8465bff645a7264af1657eb885d5864c4ea37e476044b1d081150ea042&w=740"
+                        alt="work 1" class="hover-image">
+                </div>
+                <div class="work-item">
+                    <h3>Coding App</h3>
+                    <img src="https://img.freepik.com/free-photo/representations-user-experience-interface-design_23-2150038906.jpg?t=st=1731328709~exp=1731332309~hmac=dd2af96f209b1c6e8e17d271919edcacdbd33681436e536987b15d3ff2c19018&w=996"
+                        alt="work 2" class="hover-image">
+                </div>
+                <div class="work-item">
+                    <h3>Tech App</h3>
+                    <img src="https://img.freepik.com/free-photo/hand-holding-smartphone-home_23-2150652839.jpg?t=st=1731328769~exp=1731332369~hmac=ee14e626fc19acdd41d94144b87f5e73841ca14351546d8698a69153796a1d83&w=996"
+                        alt="work 2" class="hover-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <form action="#">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Your Message:</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 Ceylon Biscuits Limited. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"> </script>
+</body>
+
+</html>
