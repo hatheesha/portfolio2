@@ -202,7 +202,7 @@ nav ul li a:hover::after {
 }
 
 .about-col-1 img {
-    width: 100%;
+    width: 50%;
     height: auto;
     border-radius: 50%;
 }
@@ -423,4 +423,22 @@ footer {
     .contact form {
         flex-direction: column;
     }
+}
+/* For WebKit browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Background color of the track */
+    border-radius: 10px; /* Rounded corners for the track */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888; /* Color of the scrollbar thumb */
+    border-radius: 10px; /* Rounded corners for the thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Color of the scrollbar thumb on hover */
 }
