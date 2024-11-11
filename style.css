@@ -284,7 +284,10 @@ h2 {
 }
 
 .services .service-item {
-    text-align: left;
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center items horizontally */
+    text-align: center; /* Center text */
     padding: 1rem;
     border: 1px solid #ddd;
     border-radius: 5px;
