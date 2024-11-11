@@ -351,7 +351,37 @@ h2 {
 .contact button:hover {
     background-color: #0056b3;
 }
+.social-media {
+    margin-top: 20px; /* Space above the social media section */
+    text-align: center; /* Center the content */
+}
 
+.social-media h3 {
+    font-size: 24px; /* Size of the heading */
+    margin-bottom: 10px; /* Space below the heading */
+}
+
+.social-media ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+}
+
+.social-media li {
+    display: inline-block; /* Display list items in a row */
+    margin: 0 15px; /* Space between icons */
+}
+
+.social-media a {
+    text-decoration: none; /* Remove underline from links */
+    font-size: 30px; /* Size of the icons */
+    color: #000; /* Default color for the icons */
+    transition: color 0.3s, transform 0.3s; /* Smooth transition for hover effect */
+}
+
+.social-media a:hover {
+    color: #007bff; /* Change color on hover */
+    transform: scale(1.1); /* Slightly enlarge the icon on hover */
+}
 /* Footer styles */
 footer {
     text-align: center;
