@@ -7,94 +7,127 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6t3mJ+uMpqdLdPjkZXehszxfizsEeWJuZW/KyqJx9mRbmiQaGOgXehAHqMY5gztcYKzWjKg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <title>My Portfolio</title>
 </head>
 
-<body>
+<body class="font-sans text-gray-800 bg-gray-100">
 
-    <header class="header">
-        <div>
-            <a href="#home" class="logo">
-                <img src="images/logo.png" alt="hero">
+    <header class="fixed top-0 w-full p-4 bg-white/80 backdrop-blur-md z-10 bg-nav">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#home"
+                class="logo w-auto h-10 cursor-pointer flex transition-opacity hover:opacity-70 transform hover:scale-110">
+                <img src="images/logo.png" alt="hero" class="h-full">
             </a>
+            <nav class="flex flex-1 justify-end items-center">
+                <button class="menu-toggle block md:hidden text-gray-800 focus:outline-none p-0"
+                    aria-label="Toggle Navigation">
+                    <span class="bar block w-6 h-0.5 bg-gray-800 my-1 transition-transform"></span>
+                    <span class="bar block w-6 h-0.5 bg-gray-800 my-1 transition-opacity"></span>
+                    <span class="bar block w-6 h-0.5 bg-gray-800 my-1 transition-transform"></span>
+                </button>
+                <ul id="navigation" class="hidden md:flex space-x-6 text-gray-900 font-semibold">
+                    <li><a href="#home"
+                            class="relative inline-flex hover:text-gray-700 after:content-[''] after:w-0 after:h-0.5 after:bg-gray-700 after:absolute after:left-0 after:-bottom-1 after:transition-all hover:after:w-full">Home</a>
+                    </li>
+                    <li><a href="#about"
+                            class="relative inline-flex hover:text-gray-700 after:content-[''] after:w-0 after:h-0.5 after:bg-gray-700 after:absolute after:left-0 after:-bottom-1 after:transition-all hover:after:w-full">About</a>
+                    </li>
+                    <li><a href="#services"
+                            class="relative inline-flex hover:text-gray-700 after:content-[''] after:w-0 after:h-0.5 after:bg-gray-700 after:absolute after:left-0 after:-bottom-1 after:transition-all hover:after:w-full">Services</a>
+                    </li>
+                    <li><a href="#work"
+                            class="relative inline-flex hover:text-gray-700 after:content-[''] after:w-0 after:h-0.5 after:bg-gray-700 after:absolute after:left-0 after:-bottom-1 after:transition-all hover:after:w-full">My
+                            Work</a>
+                    </li>
+                    <li><a href="#contact"
+                            class="relative inline-flex hover:text-gray-700 after:content-[''] after:w-0 after:h-0.5 after:bg-gray-700 after:absolute after:left-0 after:-bottom-1 after:transition-all hover:after:w-full">Contact</a>
+                    </li>
+                </ul>
+            </nav>
         </div>
-        <nav>
-            <button class="menu-toggle" aria-label="Toggle Navigation">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
-            <ul id="navigation">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#work">My Work</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
     </header>
 
-    <section class="home" id="home">
-        <div class="home-text">
-            <div class="container">
-                <div class="home-text">
-                    <h2>Hi, I'm <span>Hathisa Thissara</span></h2>
-                    <h1>I’m a <span></span></h1>
-                    <div class="slideshow-container">
-                        <img class="slides fade"
-                            src="https://img.freepik.com/free-vector/flat-content-management-system_23-2148807862.jpg?ga=GA1.1.1298159162.1725785097&semt=ais_hybrid"
-                            alt="Image 1">
-                        <img class="slides fade"
-                            src="https://img.freepik.com/free-vector/flat-design-cms-concept-illustration_23-2148796509.jpg?ga=GA1.1.1298159162.1725785097&semt=ais_hybrid"
-                            alt="Image 2">
-                        <img class="slides fade"
-                            src=" https://img.freepik.com/free-vector/gradient-devops-illustration_23-2149373211.jpg?ga=GA1.1.1298159162.1725785097&semt=ais_hybrid"
-                            alt="Image 3">
-                        <img class="slides fade"
-                            src=" https://img.freepik.com/premium-vector/abstract-technology-sql-illustration_23-2149221115.jpg?ga=GA1.1.1298159162.1725785097&semt=ais_hybrid"
-                            alt="Image 4">
-                        <img class="slides fade"
-                            src=" https://img.freepik.com/free-photo/indian-software-engineer-working-his-laptop_53876-95098.jpg?ga=GA1.1.1298159162.1725785097&semt=ais_hybrid"
-                            alt="Image 5">
-                    </div>
+    <section class="home relative w-screen h-screen flex items-center justify-center text-center bg-cover bg-center"
+        id="home"
+        style="background-image: url('https://media.istockphoto.com/id/1437887123/photo/blank-screen-glass-laptop-neon-lighting-background-with-geometric-shapes.webp?a=1&b=1&s=612x612&w=0&k=20&c=KMMJgvYiMeUZHIxIr_kel_TtCf0l-K-SCZrYYF9dGxg=')">
+        <div class="container mx-auto px-4">
+            <div class="text-white">
+                <h2 class="text-2xl mb-2 text-gray-400">Hi, I'm <span class="font-bold">Hathisa Thissara</span></h2>
+                <h1 class="text-5xl font-bold">I’m a <span class="relative inline-block" id="dynamic-text"></span>
+                </h1>
+                <div
+                    class="slideshow-container max-w-2xl mx-auto mt-5 overflow-hidden rounded-lg border-2 border-gray-300">
+                    <img class="slides w-full h-auto hidden fade"
+                        src="https://plus.unsplash.com/premium_photo-1685086785054-d047cdc0e525?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8V2ViJTIwRGV2ZWxvcG1lbnR8ZW58MHx8MHx8fDA%3D"
+                        alt="Image 1">
+                    <img class="slides w-full h-auto hidden fade"
+                        src="https://images.unsplash.com/photo-1457305237443-44c3d5a30b89?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8V2ViJTIwRGV2ZWxvcG1lbnR8ZW58MHx8MHx8fDA%3D"
+                        alt="Image 2">
+                    <img class="slides w-full h-auto hidden fade"
+                        src="https://images.unsplash.com/photo-1583508915901-b5f84c1dcde1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8V2ViJTIwRGV2ZWxvcG1lbnR8ZW58MHx8MHx8fDA%3D"
+                        alt="Image 3">
+                    <img class="slides w-full h-auto hidden fade"
+                        src="https://images.unsplash.com/photo-1730130054404-c2bd8e7038c2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8V2ViJTIwRGV2ZWxvcG1lbnR8ZW58MHx8MHx8fDA%3D"
+                        alt="Image 4">
+                    <img class="slides w-full h-auto hidden fade"
+                        src="https://images.unsplash.com/photo-1732020743205-9a1da14e36fd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fFdlYiUyMERldmVsb3BtZW50fGVufDB8fDB8fHww"
+                        alt="Image 5">
 
-                    <div style="text-align:center">
-                        <span class="dot" onclick="currentSlide(1)"></span>
-                        <span class="dot" onclick="currentSlide(2)"></span>
-                        <span class="dot" onclick="currentSlide(3)"></span>
-                    </div>
                 </div>
-                <a href="https://wa.me/+94701207991" class="btn">Hire Me</a>
-
+                <div class="mt-4 text-center">
+                    <span
+                        class="dot inline-block h-3 w-3 rounded-full bg-gray-500 cursor-pointer mx-1 hover:bg-gray-400 transition-colors"
+                        onclick="currentSlide(1)"></span>
+                    <span
+                        class="dot inline-block h-3 w-3 rounded-full bg-gray-500 cursor-pointer mx-1 hover:bg-gray-400 transition-colors"
+                        onclick="currentSlide(2)"></span>
+                    <span
+                        class="dot inline-block h-3 w-3 rounded-full bg-gray-500 cursor-pointer mx-1 hover:bg-gray-400 transition-colors"
+                        onclick="currentSlide(3)"></span>
+                </div>
+                <a href="https://wa.me/+94701207991"
+                    class="mt-6 inline-block bg-gray-700 text-white py-2 px-4 rounded transition-colors hover:bg-green-600 transform hover:scale-105 active:scale-95 hire-me-button">Hire
+                    Me</a>
             </div>
         </div>
     </section>
-    <section class="about" id="about">
-        <div class="container">
-            <div class="row">
-                <div class="about-col-1">
-                    <img src="images/FB_IMG_1724853380935.jpg" alt="Profile Picture">
+
+    <section class="about py-16 text-center text-gray-50 relative bg-cover bg-center bg-no-repeat" id="about"
+        style="background-image: url('https://images.unsplash.com/32/Mc8kW4x9Q3aRR3RkP5Im_IMG_4417.jpg?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cG9ydGZvbGlvJTIwYWJvdXQlMjAlMjBiYWNrZ3JvdW5kfGVufDB8fDB8fHww');">
+        <div class="absolute inset-0 bg-gray-900 opacity-75"></div> <!-- Background overlay -->
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="flex flex-wrap justify-between">
+                <div class="w-full md:w-1/3">
+                    <img src="images/FB_IMG_1724853380935.jpg" alt="Profile Picture" class="w-1/2 mx-auto rounded-full">
                 </div>
-                <div class="about-col-2">
-                    <h1 class="sub-title">About me</h1>
-                    <p>Hey,I'm a passionate web developer with a strong foundation in HTML, CSS, JavaScript, and various
+                <div class="w-full md:w-2/3 mt-8 md:mt-0 text-left">
+                    <h1 class="text-3xl font-bold mb-4 text-gray-200">About me</h1>
+                    <p class="mb-6">
+                        Hey, I'm a passionate web developer with a strong foundation in HTML, CSS, JavaScript, and
+                        various
                         frameworks. I'm dedicated to creating user-friendly and visually appealing websites that meet my
-                        clients' needs. I'm always eager to learn new technologies and keep my skills sharp.</p>
-                    <div class="tab-titles">
-                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        clients' needs. I'm always eager to learn new technologies and keep my skills sharp.
+                    </p>
+                    <div class="flex space-x-4">
+                        <p class="tab-links text-lg font-semibold cursor-pointer relative hover:text-gray-200 active-link after:content-[''] after:w-0 after:h-0.5 after:bg-blue-500 after:absolute after:left-0 after:-bottom-1 after:transition-all hover:after:w-full"
+                            onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links text-lg font-semibold cursor-pointer relative hover:text-gray-200 after:content-[''] after:w-0 after:h-0.5 after:bg-blue-500 after:absolute after:left-0 after:-bottom-1 after:transition-all hover:after:w-full"
+                            onclick="opentab('experience')">Experience</p>
                     </div>
-                    <div class="table-contents active-tab" id="skills">
-                        <ul>
+                    <div class="table-contents mt-6 active-tab" id="skills">
+                        <ul class="list-none space-y-2">
                             <li><span>UI/UX</span><br>Designing Web/App interfaces</li>
                             <li><span>Web Development</span><br>Web/App Developer</li>
                             <li><span>App Development</span><br>Building Android & iOS Apps</li>
                             <li><span>Software Development</span><br>Building Software</li>
                         </ul>
                     </div>
-                    <div class="table-contents" id="experience" style="display: none;">
-                        <ul>
+                    <div class="table-contents mt-6 hidden" id="experience">
+                        <ul class="list-none space-y-2">
                             <li><span>2024-Current</span><br>Following ICT Diploma</li>
                         </ul>
                     </div>
@@ -102,120 +135,138 @@
             </div>
         </div>
     </section>
-
-    <section class="services" id="services">
-        <div class="container">
-            <h2>Our Services</h2>
-            <div class="service-grid">
-                <div class="service-item">
-                    <h3><i class="fa fa-code"></i> Web Development</i></h3>
-                    <img src="https://img.freepik.com/free-vector/front-end-concept-illustration_114360-22213.jpg?t=st=1731329770~exp=1731333370~hmac=f9eff025ed94ec5c0e56d47284538eafbaa30e6693690c2d261eb9483ac0ed87&w=740"
-                        alt="work 1" class="hover-image">
+    <section class="services py-16 bg-gray-200" id="services">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8 text-center text-gray-800">Our Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div
+                    class="service-item bg-white p-6 rounded shadow-md flex flex-col items-center text-center hover:shadow-lg transform hover:scale-105 transition-transform">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800"><i class="fa fa-code"></i> Web Development</h3>
+                    <img src="https://media.istockphoto.com/id/2130663382/photo/closeup-young-man-software-developers-using-computer-to-write-code-application-program-for-ai.webp?a=1&b=1&s=612x612&w=0&k=20&c=7RNfNlnltXdaIoZEfmEcixYjAxhX2GBm0Wnadbruid0="
+                        alt="work 1" class="w-full max-w-48 h-auto mb-4 hover:opacity-70 transition-opacity">
                 </div>
-                <div class="service-item">
-                    <h3><i class="fa fa-crop"></i> UI/UX</h3>
-                    <img src="https://img.freepik.com/free-vector/linear-flat-ui-ux-landing-page-template_23-2149047070.jpg?t=st=1731329818~exp=1731333418~hmac=e1d53ec6d27adc83cd62caa869276386e0ff6c408660bc567a72635b14d2763a&w=996"
-                        alt="work 2" class="hover-image">
+                <div
+                    class="service-item bg-white p-6 rounded shadow-md flex flex-col items-center text-center hover:shadow-lg transform hover:scale-105 transition-transform">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800"><i class="fa fa-crop"></i> UI/UX</h3>
+                    <img src="https://plus.unsplash.com/premium_photo-1720903984909-04be5b4cda06?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8VUklMkZVWHxlbnwwfHwwfHx8MA%3D%3D"
+                        alt="work 2" class="w-full max-w-48 h-auto mb-4 hover:opacity-70 transition-opacity">
                 </div>
-                <div class="service-item">
-                    <h3><i class="fa fa-crosshairs"></i> Software Development</h3>
-                    <img src="https://img.freepik.com/free-vector/hand-drawn-flat-design-api-illustration_23-2149365021.jpg?ga=GA1.1.1298159162.1725785097&semt=ais_hybrid"
-                        alt="work 3" class="hover-image">
+                <div
+                    class="service-item bg-white p-6 rounded shadow-md flex flex-col items-center text-center hover:shadow-lg transform hover:scale-105 transition-transform">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800"><i class="fa fa-crosshairs"></i> Software
+                        Development</h3>
+                    <img src="https://media.istockphoto.com/id/1520235112/photo/ai-large-language-model-code.webp?a=1&b=1&s=612x612&w=0&k=20&c=ll5KQanFYCwRN-G16dDEAIzd1jNNiQQwPX0l8kVDHk4="
+                        alt="work 3" class="w-full max-w-48 h-auto mb-4 hover:opacity-70 transition-opacity">
                 </div>
-                <div class="service-item">
-                    <h3><i class="fas fa-mobile-alt"></i> Mobile App Development</h3>
-                    <img src="https://img.freepik.com/free-vector/app-development-banner_33099-1720.jpg?ga=GA1.1.1298159162.1725785097&semt=ais_hybrid"
-                        alt="work 4" class="hover-image">
+                <div
+                    class="service-item bg-white p-6 rounded shadow-md flex flex-col items-center text-center hover:shadow-lg transform hover:scale-105 transition-transform">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800"><i class="fas fa-mobile-alt"></i> Mobile App
+                        Development</h3>
+                    <img src="https://media.istockphoto.com/id/1195696110/photo/hands-using-mobile-payments-digital-marketing-banking-network-online-shopping-and-icon.webp?a=1&b=1&s=612x612&w=0&k=20&c=jRLDwI6fHep_ixS6SevZUSrk5tXkjxDGW5PnrZpved0="
+                        alt="work 4" class="w-full max-w-48 h-auto mb-4 hover:opacity-70 transition-opacity">
                 </div>
-
-                <div class="service-item">
-                    <h3><i class="fas fa-laptop-code"></i> Custom Software Development</h3>
-                    <img src="https://img.freepik.com/free-photo/programming-software-code-application-technology-concept_53876-123931.jpg?ga=GA1.1.1298159162.1725785097&semt=ais_hybrid"
-                        alt="work 5" class="hover-image">
+                <div
+                    class="service-item bg-white p-6 rounded shadow-md flex flex-col items-center text-center hover:shadow-lg transform hover:scale-105 transition-transform">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800"><i class="fas fa-laptop-code"></i> Custom
+                        Software Development</h3>
+                    <img src="https://plus.unsplash.com/premium_photo-1720287601300-cf423c3d6760?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Q3VzdG9tJTIwJTIwU29mdHdhcmUlMjBEZXZlbG9wbWVudHxlbnwwfHwwfHx8MA%3D%3D"
+                        alt="work 5" class="w-full max-w-48 h-auto mb-4 hover:opacity-70 transition-opacity">
                 </div>
-                <div class="service-item">
-                    <h3><i class="fas fa-plug"></i> API Development & Integration</h3>
-                    <img src="https://img.freepik.com/free-vector/gradient-api-infographic_23-2149371582.jpg?ga=GA1.1.1298159162.1725785097&semt=ais_hybrid"
-                        alt="work 6" class="hover-image">
+                <div
+                    class="service-item bg-white p-6 rounded shadow-md flex flex-col items-center text-center hover:shadow-lg transform hover:scale-105 transition-transform">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800"><i class="fas fa-plug"></i> API Development &
+                        Integration</h3>
+                    <img src="https://media.istockphoto.com/id/1864830483/photo/application-program-interface-api-a-woman-using-smartphone-application-that-has-software-as.webp?a=1&b=1&s=612x612&w=0&k=20&c=tfGJwKlbJn_8Ecj3y3iDA73XcYLPBsBwuSOSmWLATjw="
+                        alt="work 6" class="w-full max-w-48 h-auto mb-4 hover:opacity-70 transition-opacity">
                 </div>
-
             </div>
         </div>
     </section>
 
-    <section class="work" id="work">
-        <div class="container">
-            <h2>My Work</h2>
-            <div class="work-grid">
-                <div class="work-item">
-                    <h3>Web Page</h3>
-                    <img src="https://img.freepik.com/free-photo/3d-rendering-website-hosting-concept_23-2149484780.jpg?t=st=1731328609~exp=1731332209~hmac=a68dbd8465bff645a7264af1657eb885d5864c4ea37e476044b1d081150ea042&w=740"
-                        alt="work 1" class="hover-image">
+    <section class="work py-16" id="work">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8 text-center text-gray-800">My Work</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div
+                    class="work-item bg-white p-4 rounded shadow-md text-center hover:shadow-lg transform hover:scale-105 transition-transform">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Web Page</h3>
+                    <img src="https://images.unsplash.com/photo-1569322977266-acff659212fd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8V2ViJTIwUGFnZXxlbnwwfHwwfHx8MA%3D%3D"
+                        alt="work 1" class="w-full max-w-48 h-auto mb-4 hover:opacity-70 transition-opacity">
                 </div>
-                <div class="work-item">
-                    <h3>Coding App</h3>
-                    <img src="https://img.freepik.com/free-photo/representations-user-experience-interface-design_23-2150038906.jpg?t=st=1731328709~exp=1731332309~hmac=dd2af96f209b1c6e8e17d271919edcacdbd33681436e536987b15d3ff2c19018&w=996"
-                        alt="work 2" class="hover-image">
+                <div
+                    class="work-item bg-white p-4 rounded shadow-md text-center hover:shadow-lg transform hover:scale-105 transition-transform">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Coding App</h3>
+                    <img src="https://images.unsplash.com/photo-1554260570-47e791ab2fc7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Q29kaW5nJTIwQXBwfGVufDB8fDB8fHww"
+                        alt="work 2" class="w-full max-w-48 h-auto mb-4 hover:opacity-70 transition-opacity">
                 </div>
-                <div class="work-item">
-                    <h3>Tech App</h3>
-                    <img src="https://img.freepik.com/free-photo/hand-holding-smartphone-home_23-2150652839.jpg?t=st=1731328769~exp=1731332369~hmac=ee14e626fc19acdd41d94144b87f5e73841ca14351546d8698a69153796a1d83&w=996"
-                        alt="work 3" class="hover-image">
+                <div
+                    class="work-item bg-white p-4 rounded shadow-md text-center hover:shadow-lg transform hover:scale-105 transition-transform">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Tech App</h3>
+                    <img src="https://plus.unsplash.com/premium_photo-1683262038148-2ac280407276?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8VGVjaCUyMEFwcHxlbnwwfHwwfHx8MA%3D%3D"
+                        alt="work 3" class="w-full max-w-48 h-auto mb-4 hover:opacity-70 transition-opacity">
                 </div>
-                <div class="work-item">
-                    <h3>School Management System</h3>
-                    <img src="https://img.freepik.com/free-vector/e-learning-infographic-set_1284-16836.jpg?ga=GA1.1.1298159162.1725785097&semt=ais_hybrid"
-                        alt="work 4" class="hover-image">
+                <div
+                    class="work-item bg-white p-4 rounded shadow-md text-center hover:shadow-lg transform hover:scale-105 transition-transform">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">School Management System</h3>
+                    <img src="https://media.istockphoto.com/id/1340516763/photo/empty-classroom.webp?a=1&b=1&s=612x612&w=0&k=20&c=jbYGCEpqm8nTe-qwaydKnKU0zxQ1nYVMBsj2P0Sqez0="
+                        alt="work 4" class="w-full max-w-48 h-auto mb-4 hover:opacity-70 transition-opacity">
                 </div>
-                <div class="work-item">
-                    <h3>Machine Learning Model</h3>
-                    <img src="https://img.freepik.com/free-photo/digital-art-ai-technology-background_23-2151719590.jpg?ga=GA1.1.1298159162.1725785097&semt=ais_hybrid"
-                        alt="work 5" class="hover-image">
+                <div
+                    class="work-item bg-white p-4 rounded shadow-md text-center hover:shadow-lg transform hover:scale-105 transition-transform">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Machine Learning Model</h3>
+                    <img src="https://media.istockphoto.com/id/2084953049/photo/neural-network-nodes-deep-learning-artificial-intelligence-machine-learning-model.webp?a=1&b=1&s=612x612&w=0&k=20&c=kySkpXxwGqj4vuZi3UkHtDioMVvUgXDDvGzrkgonU9Q="
+                        alt="work 5" class="w-full max-w-48 h-auto mb-4 hover:opacity-70 transition-opacity">
                 </div>
-                <div class="work-item">
-                    <h3>Data Visualization Tool</h3>
-                    <img src="https://img.freepik.com/free-vector/data-analysis-landing-page-template_52683-479.jpg?ga=GA1.1.1298159162.1725785097&semt=ais_hybrid"
-                        alt="work 6" class="hover-image">
+                <div
+                    class="work-item bg-white p-4 rounded shadow-md text-center hover:shadow-lg transform hover:scale-105 transition-transform">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Data Visualization Tool</h3>
+                    <img src="https://media.istockphoto.com/id/1342186559/photo/a-business-man-using-a-computer-to-manage-documents-online-document-communication-database.webp?a=1&b=1&s=612x612&w=0&k=20&c=XQFDCEeEbTZpWLHoL6p_dkRYATnL4E5mxJyZObip5tQ="
+                        alt="work 6" class="w-full max-w-48 h-auto mb-4 hover:opacity-70 transition-opacity">
                 </div>
-
             </div>
         </div>
     </section>
 
-    <section class="contact" id="contact">
-        <div class="container">
-            <h2>Contact Us</h2>
-            <div class="contact-content">
-                <div class="contact-form">
-                    <form action="https://formspree.io/f/xyzzzwkg" method="POST">
-                        <label for="name">Your Name:
-                            <input type="text" name="name" required>
+    <section class="contact py-16" id="contact">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8 text-center text-gray-800">Contact Us</h2>
+            <div class="flex flex-wrap gap-8 justify-between">
+                <div class="w-full md:w-1/2 bg-white p-6 rounded shadow-md">
+                    <form action="https://formspree.io/f/xyzzzwkg" method="POST" class="flex flex-col">
+                        <label for="name" class="mb-2 font-semibold text-gray-700">Your Name:
+                            <input type="text" name="name" required
+                                class="w-full p-2 border border-gray-300 rounded mt-1 focus:outline-none focus:border-blue-500">
                         </label>
-                        <label for="email">Your Email:
-                            <input type="email" name="email" required>
+                        <label for="email" class="mb-2 font-semibold text-gray-700">Your Email:
+                            <input type="email" name="email" required
+                                class="w-full p-2 border border-gray-300 rounded mt-1 focus:outline-none focus:border-blue-500">
                         </label>
-                        <label for="message">Your Message:
-                            <textarea name="message" required></textarea>
+                        <label for="message" class="mb-2 font-semibold text-gray-700">Your Message:
+                            <textarea name="message" required
+                                class="w-full p-2 border border-gray-300 rounded mt-1 resize-vertical min-h-24 focus:outline-none focus:border-blue-500"></textarea>
                         </label>
-                        <button type="submit">Send</button>
+                        <button type="submit"
+                            class="mt-4 py-2 px-4 bg-blue-600 text-white rounded hover:bg-blue-700 focus:outline-none transition-colors transform hover:scale-105 active:scale-95">Send</button>
                     </form>
-    
-                    <div class="social-media">
-                        <h3>Follow Us:</h3>
-                        <ul>
-                            <li><a href="https://www.facebook.com/hatheesha.thissara.18" target="_blank"><i
-                                        class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="https://x.com/HathisaThissara" target="_blank"><i class="fab fa-twitter"></i></a>
-                            </li>
-                            <li><a href="https://www.instagram.com/hathisa_thissara/" target="_blank"><i
-                                        class="fab fa-instagram"></i></a></li>
+                    <div class="mt-8 text-center">
+                        <h3 class="text-xl font-semibold mb-4 text-gray-800">Follow Us:</h3>
+                        <ul class="flex justify-center space-x-4">
+                            <li><a href="https://www.facebook.com/hatheesha.thissara.18" target="_blank"
+                                    class="text-gray-700 hover:text-blue-600 transition-colors"><i
+                                        class="fab fa-facebook-f text-2xl"></i></a></li>
+                            <li><a href="https://x.com/HathisaThissara" target="_blank"
+                                    class="text-gray-700 hover:text-blue-600 transition-colors"><i
+                                        class="fab fa-twitter text-2xl"></i></a></li>
+                            <li><a href="https://www.instagram.com/hathisa_thissara/" target="_blank"
+                                    class="text-gray-700 hover:text-blue-600 transition-colors"><i
+                                        class="fab fa-instagram text-2xl"></i></a></li>
                             <li><a href="https://www.linkedin.com/in/hathisa-thissara?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
-                                    target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+                                    target="_blank" class="text-gray-700 hover:text-blue-600 transition-colors"><i
+                                        class="fab fa-linkedin-in text-2xl"></i></a></li>
                         </ul>
                     </div>
                 </div>
-    
-                <div class="contact-map">
+                <div class="w-full md:w-1/2 rounded overflow-hidden shadow-md">
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.835434509423!2d144.95373541568294!3d-37.81627944268756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf0727ed0a0dd6f8!2sMelbourne%20VIC%2C%20Australia!5e0!3m2!1sen!2s!4v1692196035897!5m2!1sen!2s"
                         width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
@@ -224,12 +275,135 @@
             </div>
         </div>
     </section>
-    
-    <footer>
+
+    <footer class="bg-gray-800 text-white text-center py-4">
         <p>© 2024 Hathisa Thissara. All rights reserved.</p>
     </footer>
 
-    <script src="script.js"> </script>
-</body>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Hamburger menu toggle
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navigation = document.querySelector('#navigation');
 
-</html>
+            menuToggle.addEventListener('click', () => {
+                navigation.classList.toggle('hidden');
+            });
+
+
+            // Dynamic Text
+            const dynamicTextElement = document.getElementById('dynamic-text');
+            const words = ["Web Developer", "UI/UX Designer", "App Developer", "Software Developer"];
+            let wordIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+            let typingSpeed = 150;
+            let holdSpeed = 2000;
+
+
+            function type() {
+                const currentWord = words[wordIndex];
+                if (isDeleting) {
+                    dynamicTextElement.textContent = currentWord.substring(0, charIndex - 1)
+                    charIndex--;
+                } else {
+                    dynamicTextElement.textContent = currentWord.substring(0, charIndex + 1)
+                    charIndex++;
+                }
+
+                if (!isDeleting && charIndex == currentWord.length) {
+                    isDeleting = true;
+                    setTimeout(type, holdSpeed)
+                } else if (isDeleting && charIndex == 0) {
+                    isDeleting = false;
+                    wordIndex = (wordIndex + 1) % words.length;
+                    setTimeout(type, typingSpeed)
+                } else {
+                    setTimeout(type, typingSpeed);
+                }
+            }
+
+            type();
+            // tab functionality
+            const tablinks = document.querySelectorAll('.tab-links');
+            const tableContents = document.querySelectorAll('.table-contents');
+
+            function opentab(tab) {
+                tableContents.forEach(tabcontent => {
+                    tabcontent.classList.add('hidden');
+                });
+                tablinks.forEach(tablink => {
+                    tablink.classList.remove('active-link');
+                });
+                document.getElementById(tab).classList.remove('hidden');
+                event.currentTarget.classList.add('active-link');
+            }
+            // slideshow functionality
+
+            let slideIndex = 0;
+            showSlides();
+
+            function showSlides() {
+                let i;
+                const slides = document.querySelectorAll(".slides");
+                const dots = document.querySelectorAll(".dot");
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                slideIndex++;
+                if (slideIndex > slides.length) {
+                    slideIndex = 1
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" bg-gray-400", "");
+                }
+                slides[slideIndex - 1].style.display = "block";
+                dots[slideIndex - 1].className += " bg-gray-400";
+                setTimeout(showSlides, 3000); // Change image every 3 seconds
+            }
+
+            function currentSlide(n) {
+                let i;
+                const slides = document.querySelectorAll(".slides");
+                const dots = document.querySelectorAll(".dot");
+                if (n > slides.length) {
+                    slideIndex = 1
+                }
+                else if (n < 1) {
+                    slideIndex = slides.length;
+                } else {
+                    slideIndex = n;
+                }
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" bg-gray-400", "");
+                }
+
+                slides[slideIndex - 1].style.display = "block";
+                dots[slideIndex - 1].className += " bg-gray-400";
+            }
+
+            //GSAP animation
+            const hireMeButton = document.querySelector('.hire-me-button');
+
+            hireMeButton.addEventListener('mouseenter', () => {
+                gsap.to(hireMeButton, {
+                    duration: 0.3,
+                    scale: 1.1,
+                    y: -5,
+                    ease: 'power2.out',
+                });
+            });
+
+            hireMeButton.addEventListener('mouseleave', () => {
+                gsap.to(hireMeButton, {
+                    duration: 0.3,
+                    scale: 1,
+                    y: 0,
+                    ease: 'power2.out',
+                });
+            });
+        });
+    </script>
