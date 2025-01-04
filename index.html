@@ -59,6 +59,72 @@
                 margin: 0.5rem 0;
             }
         }
+
+        .animate-spin-slow {
+            animation: spin 4s linear infinite;
+        }
+
+        .animate-ripple {
+            animation: ripple 1.5s ease-out infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes ripple {
+            0% {
+                transform: scale(1);
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: scale(3);
+                opacity: 0;
+            }
+        }
+
+        .perspective {
+            perspective: 1000px;
+        }
+
+        .animate-bounce-slow {
+        animation: bounce-slow 1.5s infinite;
+    }
+
+    @keyframes bounce-slow {
+        0%, 100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-8px);
+        }
+    }
+
+    .perspective {
+        perspective: 1000px;
+    }
+
+    .animate-ping {
+        animation: ping 1s infinite;
+    }
+
+    @keyframes ping {
+        0% {
+            transform: scale(1);
+            opacity: 1;
+        }
+        100% {
+            transform: scale(2);
+            opacity: 0;
+        }
+    }
     </style>
 </head>
 
@@ -75,14 +141,35 @@
                 <a href="#contact" class="hover:text-gray-200 transition">Contact</a>
                 <!-- Download CV Button -->
                 <a href="assets/hathisa thissara_2025.pdf" download
-                    class="inline-block bg-blue-700 text-white px-4 py-2 rounded-full hover:bg-blue-800 transition">
-                    Download CV
-                </a>
+                class="relative inline-block group perspective">
+                 <!-- Glowing Background -->
+                 <span
+                     class="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-600 to-indigo-500 rounded-full blur-lg opacity-75 group-hover:opacity-100 group-hover:scale-125 transition-all duration-500">
+                 </span>
+                 <!-- Particle Animation -->
+                 <span class="absolute inset-0 z-10 flex items-center justify-center">
+                     <span
+                         class="relative w-2 h-2 bg-white rounded-full shadow-md animate-ping group-hover:opacity-100 opacity-0"></span>
+                 </span>
+                 <!-- Button Content -->
+                 <span
+                     class="relative inline-flex items-center justify-center px-8 py-4 text-lg font-extrabold text-white bg-gradient-to-br from-blue-600 to-purple-700 rounded-full shadow-lg transform transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-2 group-hover:shadow-2xl">
+                     <svg class="w-6 h-6 mr-2 animate-bounce-slow" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg">
+                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                               d="M12 4v16m0 0l-6-6m6 6l6-6"></path>
+                     </svg>
+                     Download CV
+                 </span>
+                 <!-- Subtle Glow Animation -->
+                 <span
+                     class="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 via-purple-600 to-indigo-600 opacity-40 group-hover:animate-pulse"></span>
+             </a>
             </nav>
             <button id="nav-toggle" class="block md:hidden text-2xl" aria-label="Toggle menu">☰</button>
         </div>
     </header>
-    
+
     <script>
         document.getElementById("nav-toggle").addEventListener("click", function () {
             const navLinks = document.getElementById("nav-links");
@@ -93,7 +180,7 @@
             );
         });
     </script>
-    
+
 
     <section class="home relative w-screen h-screen flex items-center justify-center text-center bg-cover bg-center"
         id="home"
@@ -140,10 +227,30 @@
                         </svg>
                     </a>
                 </div>
-                <a href="https://wa.me/+94701207991"
-                    class="mt-6 inline-block bg-blue-600 text-white py-3 px-6 rounded-full transition-all hover:bg-blue-700 transform hover:scale-105 active:scale-95 font-semibold">
-                    Hire Me
+                <a href="https://wa.me/+94701207991" class="mt-6 inline-block relative group perspective">
+                    <!-- Glowing Background -->
+                    <span
+                        class="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-600 to-indigo-600 rounded-full blur-xl opacity-75 group-hover:opacity-100 group-hover:scale-125 transition-transform duration-700">
+                    </span>
+                    <!-- Inner Button -->
+                    <span
+                        class="relative inline-flex items-center justify-center px-12 py-4 text-lg font-extrabold text-white bg-gradient-to-r from-blue-500 to-purple-600 rounded-full shadow-xl transition-transform duration-500 group-hover:rotate-3 group-hover:scale-105">
+                        <svg class="w-6 h-6 mr-3 animate-spin-slow" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 2a10 10 0 11-7.071 17.071 10 10 0 017.07-17.071zm0 4v4m0 4h.01"></path>
+                        </svg>
+                        <span class="tracking-wider">Hire Me</span>
+                    </span>
+                    <!-- Outer Glow Animation -->
+                    <span
+                        class="absolute inset-0 -z-10 bg-gradient-to-r from-blue-500 via-purple-600 to-indigo-600 opacity-40 rounded-full animate-pulse"></span>
+                    <!-- Ripple Effect -->
+                    <span
+                        class="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 via-purple-600 to-indigo-600 opacity-20 group-hover:animate-ripple"></span>
                 </a>
+
+
             </div>
         </div>
     </section>
@@ -546,7 +653,7 @@
                 </div>
             </div>
         </div>
-       
+
     </section>
 
     <footer class="bg-gray-800 text-white text-center py-4">
