@@ -67,17 +67,22 @@
     <header class="fixed top-0 w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg z-10">
         <div class="container mx-auto flex justify-between items-center px-6 py-4">
             <a href="#home" class="text-xl font-bold tracking-wider">Hathisa Thissara</a>
-            <nav id="nav-links" class="hidden md:flex md:space-x-8">
+            <nav id="nav-links" class="hidden md:flex md:space-x-8 items-center">
                 <a href="#home" class="hover:text-gray-200 transition">Home</a>
                 <a href="#about" class="hover:text-gray-200 transition">About</a>
                 <a href="#services" class="hover:text-gray-200 transition">Services</a>
                 <a href="#work" class="hover:text-gray-200 transition">My Work</a>
                 <a href="#contact" class="hover:text-gray-200 transition">Contact</a>
+                <!-- Download CV Button -->
+                <a href="assets/hathisa thissara_2025.pdf" download
+                    class="inline-block bg-blue-700 text-white px-4 py-2 rounded-full hover:bg-blue-800 transition">
+                    Download CV
+                </a>
             </nav>
             <button id="nav-toggle" class="block md:hidden text-2xl" aria-label="Toggle menu">☰</button>
         </div>
     </header>
-
+    
     <script>
         document.getElementById("nav-toggle").addEventListener("click", function () {
             const navLinks = document.getElementById("nav-links");
@@ -88,6 +93,7 @@
             );
         });
     </script>
+    
 
     <section class="home relative w-screen h-screen flex items-center justify-center text-center bg-cover bg-center"
         id="home"
